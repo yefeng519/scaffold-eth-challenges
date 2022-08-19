@@ -252,8 +252,8 @@ function App(props) {
   );
   if (DEBUG) console.log("💵 stakerContractBalance", stakerContractBalance);
 
-  const rewardRatePerSecond = useContractReader(readContracts, "Staker", "rewardRatePerSecond");
-  console.log("💵 Reward Rate:", rewardRatePerSecond);
+  const rewardRatePerBlock = useContractReader(readContracts, "Staker", "rewardRatePerBlock");
+  console.log("💵 Reward Rate:", rewardRatePerBlock);
 
   // ** keep track of a variable from the contract in the local React state:
   const balanceStaked = useContractReader(readContracts, "Staker", "balances", [address]);
@@ -526,7 +526,7 @@ function App(props) {
 
             <div style={{ padding: 8, marginTop: 16 }}>
               <div>Reward Rate Per Second:</div>
-              <Balance balance={rewardRatePerSecond} fontSize={64} /> ETH
+              <Balance balance={rewardRatePerBlock} fontSize={64} /> ETH
             </div>
 
             <Divider />
